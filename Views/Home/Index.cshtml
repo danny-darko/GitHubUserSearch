@@ -1,0 +1,79 @@
+﻿@*@model GitHubUserSearch.Models.GithubUserViewModel*@
+@model GitHubUserSearch.Models.GithubUserModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Github User Search</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    @Html.TextBox("githubUsername")
+    <button type="submit">Search User</button>
+    <br>
+    <br>
+}
+
+<h3>User Information</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avatar_url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.repos_url)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.avatar_url)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.repos_url)
+        </td>
+    </tr>
+</table>
+
+@*<h3>User Repo Information</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GithubRepos.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GithubRepos.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GithubRepos.stargazers_count)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.GithubRepos.name)
+</td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.GithubRepos.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.GithubRepos.stargazers_count)
+        </td>
+    </tr>
+</table>*@
